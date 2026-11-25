@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Accountancy | Learn Accounting</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+    color: #17243a;
+}
+
+header {
+    background: #10213b;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #42d6b0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #42d6b0;
+}
+
+.hero {
+    background: linear-gradient(130deg, #10213b, #145b75);
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #d7e5f1;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: auto;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #42d6b0;
+    color: #10213b;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section {
+    padding: 55px 7%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #718096;
+}
+
+.search-box {
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce3ec;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #087f8c;
+}
+
+.classes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.class-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0000000b;
+    border-top: 4px solid #087f8c;
+}
+
+.class-card h3 {
+    margin-bottom: 12px;
+    color: #145b75;
+}
+
+.class-card p {
+    color: #718096;
+    line-height: 1.6;
+}
+
+.class-card button {
+    margin-top: 20px;
+    padding: 11px 18px;
+    background: #087f8c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 17px;
+}
+
+.topic {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0000000b;
+}
+
+.topic h3 {
+    color: #145b75;
+    margin-bottom: 10px;
+}
+
+.topic p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.topic button {
+    margin-top: 15px;
+    padding: 9px 15px;
+    background: #10213b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lesson-area {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    line-height: 1.8;
+    box-shadow: 0 3px 15px #0000000b;
+    min-height: 150px;
+}
+
+.lesson-area h3 {
+    color: #087f8c;
+    margin-bottom: 12px;
+}
+
+.lesson-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+.lesson-area th,
+.lesson-area td {
+    border: 1px solid #dce3ec;
+    padding: 11px;
+    text-align: left;
+}
+
+.lesson-area th {
+    background: #eaf3f7;
+}
+
+.lesson-area ul {
+    padding-left: 22px;
+}
+
+.quiz {
+    background: #e7f1f6;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.quiz button {
+    margin: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #145b75;
+    color: white;
+    cursor: pointer;
+}
+
+#quizResult {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.language {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.language button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #145b75;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background: #10213b;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 1.9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        margin: 5px;
+        display: inline-block;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KERALA ACCOUNTANCY GUIDE <span>BY MAK</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#classes">Classes</a>
+        <a href="#topics">Topics</a>
+        <a href="#practice">Quiz</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Learn Accountancy<br>the Easy Way.</h1>
+
+    <p>
+        A free learning platform for Kerala Commerce students.
+        Understand accounting concepts with simple explanations,
+        examples and practice questions.
+    </p>
+
+    <button onclick="document.getElementById('classes').scrollIntoView()">
+        Start Learning
+    </button>
+</div>
+
+<section id="classes">
+
+    <div class="heading">
+        <h2>Choose Your Class</h2>
+        <p>Accounting resources for Higher Secondary students.</p>
+    </div>
+
+    <div class="classes">
+
+        <div class="class-card">
+            <h3>Plus One Accountancy</h3>
+            <p>
+                Learn accounting fundamentals, journal,
+                ledger, cash book and trial balance.
+            </p>
+            <button onclick="selectClass('plus1')">
+                Explore Plus One
+            </button>
+        </div>
+
+        <div class="class-card">
+            <h3>Plus Two Accountancy</h3>
+            <p>
+                Explore partnership accounts, company accounts
+                and financial statement analysis.
+            </p>
+            <button onclick="selectClass('plus2')">
+                Explore Plus Two
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section id="topics">
+
+    <div class="heading">
+        <h2 id="topicTitle">Accountancy Learning Centre</h2>
+        <p>Select a topic to understand it with examples.</p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search topics..."
+        oninput="searchTopics()">
+    </div>
+
+    <div class="topics" id="topicList">
+
+        <div class="topic" data-class="plus1">
+            <h3>Accounting Basics</h3>
+            <p>Introduction to accounting and basic concepts.</p>
+            <button onclick="showLesson('basics')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus1">
+            <h3>Accounting Equation</h3>
+            <p>Understand assets, liabilities and capital.</p>
+            <button onclick="showLesson('equation')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus1">
+            <h3>Journal Entries</h3>
+            <p>Learn debit, credit and recording transactions.</p>
+            <button onclick="showLesson('journal')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus1">
+            <h3>Ledger Accounts</h3>
+            <p>Posting, balancing and ledger preparation.</p>
+            <button onclick="showLesson('ledger')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus1">
+            <h3>Cash Book</h3>
+            <p>Single, double and triple column cash books.</p>
+            <button onclick="showLesson('cash')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus1">
+            <h3>Trial Balance</h3>
+            <p>Preparation and checking account balances.</p>
+            <button onclick="showLesson('trial')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus2">
+            <h3>Partnership Accounts</h3>
+            <p>Understand partnership accounting concepts.</p>
+            <button onclick="showLesson('partnership')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus2">
+            <h3>Company Accounts</h3>
+            <p>Learn the basics of share capital accounting.</p>
+            <button onclick="showLesson('company')">Study Topic</button>
+        </div>
+
+        <div class="topic" data-class="plus2">
+            <h3>Financial Statements</h3>
+            <p>Understand financial statements and analysis.</p>
+            <button onclick="showLesson('financial')">Study Topic</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="lessonSection">
+
+    <div class="heading">
+        <h2>Study Room</h2>
+        <p>Your selected accounting lesson appears here.</p>
+    </div>
+
+    <div class="language">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('ml')">Malayalam</button>
+    </div>
+
+    <div class="lesson-area" id="lessonContent">
+        <h3>Welcome to Kerala Accountancy!</h3>
+        <p>Select a topic from the learning centre to begin.</p>
+    </div>
+
+</section>
+
+<section id="practice">
+
+    <div class="heading">
+        <h2>Test Your Knowledge</h2>
+        <p>Try this beginner accounting question.</p>
+    </div>
+
+    <div class="quiz">
+        <h3 id="question">Which side is the debit side of an account?</h3>
+
+        <button onclick="answer('left')">Left Side</button>
+        <button onclick="answer('right')">Right Side</button>
+
+        <p id="quizResult"></p>
+
+        <button onclick="nextQuestion()">Next Question</button>
+    </div>
+
+</section>
+
+<footer>
+    <h3>KERALA ACCOUNTANCY</h3>
+    <p>Learn • Understand • Practice • Succeed</p>
+    <p>A student learning project.</p>
+    <p>© 2026 Kerala Accountancy</p>
+</footer>
+
+<script>
+
+let currentClass = "all";
+let language = "en";
+
+const lessons = {
+
+basics: {
+en: `<h3>Introduction to Accounting</h3>
+<p>Accounting is the process of identifying, measuring,
+recording, classifying, summarising and communicating
+financial information.</p>
+<h4>Basic functions:</h4>
+<ul>
+<li>Recording transactions</li>
+<li>Classifying transactions</li>
+<li>Summarising information</li>
+<li>Communicating financial results</li>
+</ul>`,
+ml: `<h3>അക്കൗണ്ടിംഗിന്റെ ആമുഖം</h3>
+<p>സാമ്പത്തിക ഇടപാടുകൾ തിരിച്ചറിയുകയും രേഖപ്പെടുത്തുകയും
+വർഗീകരിക്കുകയും സംഗ്രഹിക്കുകയും ചെയ്യുന്ന പ്രക്രിയയാണ്
+അക്കൗണ്ടിംഗ്.</p>
+<h4>പ്രധാന പ്രവർത്തനങ്ങൾ:</h4>
+<ul>
+<li>ഇടപാടുകൾ രേഖപ്പെടുത്തൽ</li>
+<li>വർഗീകരിക്കൽ</li>
+<li>സംഗ്രഹിക്കൽ</li>
+<li>സാമ്പത്തിക വിവരങ്ങൾ കൈമാറൽ</li>
+</ul>`
+},
+
+equation: {
+en: `<h3>Accounting Equation</h3>
+<p>The basic accounting equation is:</p>
+<h2>Assets = Liabilities + Capital</h2>
+<p>Example:</p>
+<p>Assets = ₹50,000</p>
+<p>Liabilities = ₹10,000</p>
+<p>Capital = ₹40,000</p>
+<p>₹50,000 = ₹10,000 + ₹40,000</p>`,
+ml: `<h3>അക്കൗണ്ടിംഗ് സമവാക്യം</h3>
+<p>അടിസ്ഥാന സമവാക്യം:</p>
+<h2>ആസ്തികൾ = ബാധ്യതകൾ + മൂലധനം</h2>
+<p>ഉദാഹരണം:</p>
+<p>ആസ്തികൾ = ₹50,000</p>
+<p>ബാധ്യതകൾ = ₹10,000</p>
+<p>മൂലധനം = ₹40,000</p>`
+},
+
+journal: {
+en: `<h3>Journal Entries</h3>
+<p>A journal is the book of original entry.
+Transactions are first recorded in chronological order.</p>
+<h4>Example: Started business with cash ₹10,000.</h4>
+<table>
+<tr><th>Particulars</th><th>Debit</th><th>Credit</th></tr>
+<tr><td>Cash A/c Dr.</td><td>10,000</td><td>-</td></tr>
+<tr><td>To Capital A/c</td><td>-</td><td>10,000</td></tr>
+</table>
+<p>Cash is debited and capital is credited.</p>
+<p><b>Remember:</b> Total debit must equal total credit.</p>`,
+ml: `<h3>ജേർണൽ എൻട്രികൾ</h3>
+<p>ഇടപാടുകൾ ആദ്യമായി തീയതി ക്രമത്തിൽ രേഖപ്പെടുത്തുന്ന
+പുസ്തകമാണ് ജേർണൽ.</p>
+<h4>ഉദാഹരണം: ₹10,000 പണമായി നിക്ഷേപിച്ച് ബിസിനസ് ആരംഭിച്ചു.</h4>
+<p>Cash A/c Dr. ₹10,000</p>
+<p>To Capital A/c ₹10,000</p>
+<p>ആകെ ഡെബിറ്റ് തുകയും ക്രെഡിറ്റ് തുകയും തുല്യമായിരിക്കണം.</p>`
+},
+
+ledger: {
+en: `<h3>Ledger Accounts</h3>
+<p>A ledger is the principal book containing individual accounts.</p>
+<h4>Important terms:</h4>
+<ul>
+<li>Debit: Left side of an account.</li>
+<li>Credit: Right side of an account.</li>
+<li>Balance c/d: Balance carried down.</li>
+<li>Balance b/d: Balance brought down.</li>
+</ul>
+<p>Ledger accounts are prepared by posting entries from the journal.</p>`,
+ml: `<h3>ലെഡ്ജർ അക്കൗണ്ടുകൾ</h3>
+<p>ഓരോ അക്കൗണ്ടിന്റെയും ഇടപാടുകൾ പ്രത്യേകം രേഖപ്പെടുത്തുന്ന
+പ്രധാന പുസ്തകമാണ് ലെഡ്ജർ.</p>
+<ul>
+<li>Debit: അക്കൗണ്ടിന്റെ ഇടതുവശം.</li>
+<li>Credit: അക്കൗണ്ടിന്റെ വലതുവശം.</li>
+<li>Balance c/d: അടുത്ത കാലയളവിലേക്ക് കൊണ്ടുപോകുന്ന ബാലൻസ്.</li>
+<li>Balance b/d: അടുത്ത കാലയളവിൽ കൊണ്ടുവരുന്ന ബാലൻസ്.</li>
+</ul>`
+},
+
+cash: {
+en: `<h3>Cash Book</h3>
+<p>A cash book records cash and bank transactions.</p>
+<h4>Types of cash books:</h4>
+<ul>
+<li>Single Column Cash Book</li>
+<li>Double Column Cash Book</li>
+<li>Triple Column Cash Book</li>
+</ul>
+<p>The cash book acts as both a book of original entry
+and a ledger account for cash and bank.</p>`,
+ml: `<h3>ക്യാഷ് ബുക്ക്</h3>
+<p>പണം, ബാങ്ക് ഇടപാടുകൾ എന്നിവ രേഖപ്പെടുത്തുന്ന പുസ്തകമാണ്
+ക്യാഷ് ബുക്ക്.</p>
+<ul>
+<li>Single Column Cash Book</li>
+<li>Double Column Cash Book</li>
+<li>Triple Column Cash Book</li>
+</ul>`
+},
+
+trial: {
+en: `<h3>Trial Balance</h3>
+<p>A trial balance is a statement containing debit and
+credit balances of ledger accounts on a particular date.</p>
+<h4>Example:</h4>
+<table>
+<tr><th>Account</th><th>Debit</th><th>Credit</th></tr>
+<tr><td>Cash A/c</td><td>5,000</td><td>-</td></tr>
+<tr><td>Capital A/c</td><td>-</td><td>5,000</td></tr>
+<tr><th>Total</th><th>5,000</th><th>5,000</th></tr>
+</table>`,
+ml: `<h3>ട്രയൽ ബാലൻസ്</h3>
+<p>ഒരു നിശ്ചിത തീയതിയിലെ ലെഡ്ജർ അക്കൗണ്ടുകളുടെ
+ഡെബിറ്റ്, ക്രെഡിറ്റ് ബാലൻസുകൾ ഉൾക്കൊള്ളുന്ന സ്റ്റേറ്റ്മെന്റാണ്
+ട്രയൽ ബാലൻസ്.</p>
+<p>ആകെ ഡെബിറ്റ് തുകയും ആകെ ക്രെഡിറ്റ് തുകയും തുല്യമായിരിക്കണം.</p>`
+},
+
+partnership: {
+en: `<h3>Partnership Accounts</h3>
+<p>Partnership is a relationship between persons who agree
+to share the profits of a business carried on by all or any
+of them acting for all.</p>
+<h4>Topics to learn:</h4>
+<ul>
+<li>Profit and loss appropriation</li>
+<li>Interest on capital</li>
+<li>Interest on drawings</li>
+<li>Partner's salary and commission</li>
+</ul>
+<p>These are introductory notes. Add your textbook chapter details here.</p>`,
+ml: `<h3>പാർട്ണർഷിപ്പ് അക്കൗണ്ടുകൾ</h3>
+<p>ബിസിനസിന്റെ ലാഭം പങ്കിടാൻ സമ്മതിക്കുന്ന വ്യക്തികൾ തമ്മിലുള്ള
+ബന്ധമാണ് പാർട്ണർഷിപ്പ്.</p>`
+},
+
+company: {
+en: `<h3>Company Accounts</h3>
+<p>A company is an incorporated association having a
+separate legal identity.</p>
+<h4>Topics to learn:</h4>
+<ul>
+<li>Share capital</li>
+<li>Issue of shares</li>
+<li>Calls on shares</li>
+<li>Forfeiture and reissue of shares</li>
+</ul>`,
+ml: `<h3>കമ്പനി അക്കൗണ്ടുകൾ</h3>
+<p>പ്രത്യേക നിയമപരമായ വ്യക്തിത്വമുള്ള സ്ഥാപനമാണ് കമ്പനി.</p>`
+},
+
+financial: {
+en: `<h3>Financial Statements</h3>
+<p>Financial statements communicate the financial
+performance and position of a business.</p>
+<ul>
+<li>Statement of Profit and Loss</li>
+<li>Balance Sheet</li>
+<li>Cash Flow Statement</li>
+</ul>`,
+ml: `<h3>സാമ്പത്തിക പ്രസ്താവനകൾ</h3>
+<p>ഒരു ബിസിനസിന്റെ സാമ്പത്തിക സ്ഥിതിയും പ്രവർത്തന ഫലവും
+വ്യക്തമാക്കുന്ന പ്രസ്താവനകളാണ് ഇവ.</p>`
+}
+
+};
+
+function selectClass(type) {
+
+    currentClass = type;
+
+    let cards = document.querySelectorAll(".topic");
+
+    cards.forEach(card => {
+        card.classList.toggle(
+            "hidden",
+            card.dataset.class !== type
+        );
+    });
+
+    document.getElementById("topicTitle").innerText =
+        type === "plus1"
+        ? "Plus One Accountancy Topics"
+        : "Plus Two Accountancy Topics";
+
+    document.getElementById("searchInput").value = "";
+
+    document.getElementById("topics").scrollIntoView();
+}
+
+function showLesson(topic) {
+
+    const lesson = lessons[topic];
+
+    document.getElementById("lessonContent").innerHTML =
+        lesson[language];
+
+    document.getElementById("lessonSection").scrollIntoView();
+}
+
+function setLanguage(selected) {
+
+    language = selected;
+
+    let active = document.getElementById("lessonContent");
+
+    if(active.dataset.topic) {
+        active.innerHTML =
+            lessons[active.dataset.topic][language];
+    }
+}
+
+function searchTopics() {
+
+    let search = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    let cards = document.querySelectorAll(".topic");
+
+    cards.forEach(card => {
+
+        let matchesClass =
+            currentClass === "all" ||
+            card.dataset.class === currentClass;
+
+        let matchesSearch =
+            card.innerText.toLowerCase().includes(search);
+
+        card.classList.toggle(
+            "hidden",
+            !(matchesClass && matchesSearch)
+        );
+    });
+}
+
+const questions = [
+    {
+        q: "Which side is the debit side of an account?",
+        a: "left",
+        explanation: "Correct! Debit is the left side."
+    },
+    {
+        q: "What is the basic accounting equation?",
+        a: "assets",
+        explanation: "Assets = Liabilities + Capital."
+    },
+    {
+        q: "Which book records transactions first?",
+        a: "journal",
+        explanation: "The journal is the book of original entry."
+    },
+    {
+        q: "What does Balance c/d mean?",
+        a: "carried",
+        explanation: "It means Balance carried down."
+    }
+];
+
+let questionNumber = 0;
+
+function answer(choice) {
+
+    let correct = questions[questionNumber].a;
+
+    let result = document.getElementById("quizResult");
+
+    if(choice === correct) {
+        result.innerText = "Correct! " +
+            questions[questionNumber].explanation;
+        result.style.color = "green";
+    } else {
+        result.innerText = "Not quite! Try again.";
+        result.style.color = "red";
+    }
+}
+
+function nextQuestion() {
+
+    questionNumber = (questionNumber + 1) % questions.length;
+
+    document.getElementById("question").innerText =
+        questions[questionNumber].q;
+
+    document.getElementById("quizResult").innerText = "";
+
+    let buttons = document.querySelectorAll(".quiz button");
+
+    let options = [
+        ["left", "right"],
+        ["assets", "expenses"],
+        ["journal", "ledger"],
+        ["carried", "brought"]
+    ];
+
+    buttons[0].innerText = options[questionNumber][0];
+    buttons[1].innerText = options[questionNumber][1];
+
+}
+
+</script>
+
+</body>
+</html>
